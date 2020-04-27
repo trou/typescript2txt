@@ -872,6 +872,7 @@ void Reader::read_from(std::istream& in){
 	std::cerr << "Warning: typescript file contains DEC screen "
 		  << "alignment command which is ignored "
 		  << "by this translator.\n";
+	break;
       default:
 	unknown_code("DEC screen alignment command ESC #",c);
       };
