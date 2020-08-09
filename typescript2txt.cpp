@@ -112,7 +112,7 @@ class Reader{
   /// Since tab-stops cannot be set right now, just puts the cursor at
   /// the next multiple of 8
   void tab(){
-    char_idx += (8-(char_idx%8))%8;
+    char_idx += (8-(char_idx%8));
   }
 
   /// Perform a carriage return - put the current character index at the beginning of the line
@@ -872,6 +872,7 @@ void Reader::read_from(std::istream& in){
 	std::cerr << "Warning: typescript file contains DEC screen "
 		  << "alignment command which is ignored "
 		  << "by this translator.\n";
+	break;
       default:
 	unknown_code("DEC screen alignment command ESC #",c);
       };
